@@ -40,7 +40,7 @@ while gameIson<5:
   time.sleep(ball.moveSpeed)
   ball.moveBall()
   ball.bounce()
-  if ball.distance(player1) <50 and ball.xcor() > 340 or ball.distance(player2) <50 and ball.xcor() < -340:
+  if ball.distance(player1) <50 and ball.xcor() > 320 or ball.distance(player2) <50 and ball.xcor() < -320:
     ball.xbounce()
   if ball.checkloss():
     score.update_score(ball.xcor())
