@@ -73,15 +73,6 @@ def search():
            email=data[website]["Email"]   
            password=data[website]["Password"]
            messagebox.showinfo("Information",message=f"website:{website}\n Email:{email}\n Password:{password}\n")
-           
-        
-                
-            
-
-
-
-
-
 #-----------------------Variables ----------------------------------------------------------------
 FONT="Courier"
 # ---------------------------- UI SETUP ------------------------------- #
