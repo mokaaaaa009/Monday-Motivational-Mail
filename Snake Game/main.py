@@ -16,24 +16,6 @@ score=Scoreboard()
 startgame=True
 sFood=Food()
 
-# Turtle.begin_poly()
-# Turtle.circle(20,180)
-# Turtle.right(90)
-# Turtle.forward(40)
-# Turtle.left(90)
-# Turtle.forward(20)
-# Turtle.left(90)
-# Turtle.forward(20)
-# Turtle.end_poly()
-# t=Turtle()
-# t = Turtle.get_poly()
-# Turtle.register_shape("snake_head", t)
-# Turtle.mainloop()
-
-# t.shape("snake_head")
-
-
-
 
 while(startgame):
   
@@ -66,38 +48,6 @@ while(startgame):
       if keyboard.is_pressed("e"):
         startgame=False
         break
-      
-      
-      
-      
-
-
-    
-
   
-
-
-
-
-    # sFood.gameOver()
-    # score.game_over()
-    # startgame=False
-
 myScreen.update()  
-  
-    
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
 myScreen.exitonclick()
