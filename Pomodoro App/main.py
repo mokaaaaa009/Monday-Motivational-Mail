@@ -14,7 +14,6 @@ minibreakflage=True
 longbreakflage=False
 timer=None
 spinbox=None
-#mark="✔"
 window=Tk()
 window.title("Pomodoro")
 
@@ -34,58 +33,24 @@ def reset():
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def setTimer():
    global mainreps
-   #global mark
+
    mainreps+=1
+   mark = "✔"
    global spinbox
    minutes=int(spinbox.get())
    if mainreps%8 ==0:
-      #check_Label.config(text="")
-      #mark="✔"
+      check_Label.config(text="")
       countdown(minutes*60)
       timer_Text.config(text="Long Break",fg=RED)
    elif mainreps%2==0:
-      
-      #check_Label.config(text=mark)
-      #mark+="✔"
+
+      check_Label.config(text=mark)
+      mark+="✔"
       countdown(minutes*60)
       timer_Text.config(text="Short Break",fg=PINK)
    else:
       countdown(minutes*60)
       timer_Text.config(text="Work Time",fg=GREEN)
-
-
-      
-      
-
-  
-
-
-
-
-
-
-
-
-
-
-
-#   global minibreakflage
-  #  if mainreps ==0:
-  #   countdown(3)
-  #   mainreps+=1
-  #   minibreakflage=False
-  #  elif mainreps < 4 and minibreakflage == False:
-  #   countdown(1)
-  #   minibreakflage=True
-  #  elif mainreps < 4 and minibreakflage == True:
-  #   countdown(3)
-  #   mainreps+=1
-  #   minibreakflage=False
-  #  else:
-  #    countdown(2)
-  #    mainreps=0  
-
-
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -100,15 +65,7 @@ def countdown(time):
     else:
        #window.lift()
        window.attributes('-topmost',True)
-       window.attributes('-topmost',False)  
-      #  setTimer()
-      #  mark=""
-      #  work_session=math.floor(mainreps/2)
-      #  for _ in range(work_session):
-      #     mark+="✔"
-      #  check_Label.config(text=mark)   
-      
-
+       window.attributes('-topmost',False)
 # ---------------------------- UI SETUP ------------------------------- #
 
 
@@ -123,8 +80,8 @@ canvas.create_image(108,112,image=bg)
 #ask User of duration he wants to focus 
 def spinbox_used():
     #gets the current value in spinbox.
-    print(spinbox.get())
-spinbox = Spinbox(from_=15, to=240, width=5,increment=5 ,command=spinbox_used)
+    spinbox.get()
+spinbox = Spinbox(from_=0.5, to=240, width=5,increment=5 ,command=spinbox_used)
 spinbox.grid(column=1,row=2)
 #write the timer in center of image
 countdown_Text=canvas.create_text(110,130,text="00:00",font=(FONT_NAME,30,"bold"),fill="white")
